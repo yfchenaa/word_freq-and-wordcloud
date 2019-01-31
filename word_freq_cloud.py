@@ -22,7 +22,7 @@ rows=pd.read_excel('Chairman.xlsx',encoding='gbk',dtype=str)
 #记录每条数据的分词情况
 word_freq=[]
 
-for i in range(5):
+for i in range(len(rows)):
     cut_text = " ".join(jieba.cut(rows['背景'][i]))
     result = jieba.analyse.textrank(cut_text, topK=50, withWeight=True)
     # 生成关键词比重字典
